@@ -44,6 +44,27 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* SOCIAL LINKS */
+.social-links {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.social-link:hover img {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
 /* SECTIONS */
 section {
   border-top: 1px solid #e5e5e7;
@@ -74,7 +95,7 @@ section h2 {
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  flex-wrap: wrap; /* адаптив */
+  flex-wrap: wrap;
 }
 
 .app-text {
