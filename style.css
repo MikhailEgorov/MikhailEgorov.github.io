@@ -66,23 +66,49 @@ section h2 {
 }
 
 /* APPS */
-.app-list {
-  display: flex;
-  gap: 80px;
-  align-items: center;
-}
-
 .app-card {
-  max-width: 320px;
+  margin-bottom: 80px;
 }
 
-.app-placeholder {
-  width: 220px;
-  height: 460px;
-  background: #f5f5f7;
-  border-radius: 32px;
-  margin-bottom: 24px;
+.app-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap; /* для мобильных экранов */
 }
+
+.app-text {
+  flex: 1 1 300px; /* текст занимает минимум 300px, растягивается */
+  max-width: 500px;
+}
+
+.app-text h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.app-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1d1d1f;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.app-screens {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.app-screens img {
+  width: 140px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
 
 /* LINKS */
 .app-link {
