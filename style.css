@@ -24,8 +24,8 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .hero h1 {
@@ -68,8 +68,8 @@ body {
 /* SECTIONS */
 section {
   border-top: 1px solid #e5e5e7;
-  padding-top: 20px;  /* добавляем, чтобы секции не слипались, можно регулировать */
-  padding-bottom: 20px;
+  padding-top: 10px;  /* добавляем, чтобы секции не слипались, можно регулировать */
+  padding-bottom: 10px;
 }
 
 section h2 {
