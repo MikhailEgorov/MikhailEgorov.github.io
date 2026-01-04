@@ -46,9 +46,9 @@
   
   <!-- ================== NAVBAR ================== -->
   <nav class="navbar">
+    <button data-target="contact">Contact Me</button> <!-- первая кнопка -->
     <button data-target="about">About</button>
     <button data-target="apps">Apps</button>
-    <button data-target="contact">Contact Me</button> <!-- новая кнопка -->
   </nav>
 
   <!-- HERO -->
@@ -200,6 +200,11 @@
           section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // При загрузке страницы всегда быть сверху
+    window.addEventListener('load', () => {
+      window.scrollTo(0, 0);
     });
   </script>
 
