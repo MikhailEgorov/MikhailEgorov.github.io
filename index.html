@@ -3,138 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mikhail Egorov – iOS Developer</title>
-
+  <title>Mikhail Egorov — iOS Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
-<!-- HERO -->
-<header class="hero">
-  <div class="container">
-    <p class="subtitle">
-      Hi, I'm Mikhail Egorov — an iOS developer and consultant, delivering polished, production-ready mobile applications.
-    </p>
 
-    <!-- Social Links -->
-    <div class="social-links">
-      <a href="#" class="social-link" title="Email" aria-label="Email">
-        <img src="icons/gmail.svg" alt="Email">
-      </a>
-      <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
-        <img src="icons/linkedin.svg" alt="LinkedIn">
-      </a>
-      <a href="#" class="social-link" title="Telegram" aria-label="Telegram">
-        <img src="icons/telegram.svg" alt="Telegram">
-      </a>
-      <a href="#" class="social-link" title="Facebook" aria-label="Facebook">
-        <img src="icons/facebook.svg" alt="Facebook">
-      </a>
-      <a href="#" class="social-link" title="Instagram" aria-label="Instagram">
-        <img src="icons/instagram.svg" alt="Instagram">
-      </a>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#apps" class="nav-link">Apps</a>
     </div>
+  </nav>
 
-  </div>
-</header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Hi, I'm Mikhail Egorov — an iOS developer and consultant, delivering
+        polished, production-ready mobile applications.
+      </h1>
 
+      <!-- SOCIAL ICONS -->
+      <div class="socials">
+        <!-- TODO: вставь свои ссылки -->
+        <a href="mailto:your@email.com" target="_blank">
+          <img src="assets/gmail.png" alt="Email" />
+        </a>
 
-  <main>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">
+          <img src="assets/linkedin.png" alt="LinkedIn" />
+        </a>
 
-    <!-- ABOUT -->
-    <section class="about">
-      <div class="container">
-        <h2>About</h2>
-        <p>
-          I build business-first iOS solutions. I handle the full application lifecycle — from concept and architecture design to development, App Store release, and post-launch support. I also enhance existing projects, improving performance, UX, and maintainability.
-        </p>
+        <a href="https://t.me/yourusername" target="_blank">
+          <img src="assets/telegram.png" alt="Telegram" />
+        </a>
+
+        <a href="https://facebook.com/yourprofile" target="_blank">
+          <img src="assets/facebook.png" alt="Facebook" />
+        </a>
+
+        <a href="https://instagram.com/yourprofile" target="_blank">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- APPS -->
-    <section class="apps">
-      <div class="container">
-        <h2>Apps</h2>
-
-        <!-- App 1 -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Mindbody Goal Tracker</h3>
-              <p>Track your goals and progress with an intuitive interface and actionable insights.</p>
-              <a href="https://apps.apple.com/us/app/mindbody-goal-tracker/id6756172150" class="app-link" target="_blank">View on App Store</a>
-            </div>
-            <div class="app-screens">
-              <img src="screens/mindbody1.png" alt="Mindbody Goal Tracker screenshot 1" />
-              <img src="screens/mindbody2.png" alt="Mindbody Goal Tracker screenshot 2" />
-              <img src="screens/mindbody3.png" alt="Mindbody Goal Tracker screenshot 3" />
-              <img src="screens/mindbody4.png" alt="Mindbody Goal Tracker screenshot 4" />
-              <img src="screens/mindbody5.png" alt="Mindbody Goal Tracker screenshot 5" />
-            </div>
-          </div>
-        </article>
-
-        <!-- App 2 -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Ringtone Maker - Video to MP3</h3>
-              <p>Create ringtones from videos and audio files quickly and easily.</p>
-              <a href="https://apps.apple.com/us/app/ringtone-maker-video-to-mp3/id6743165046" class="app-link" target="_blank">View on App Store</a>
-            </div>
-            <div class="app-screens">
-              <img src="screens/ringtone1.png" alt="Ringtone Maker screenshot 1" />
-              <img src="screens/ringtone2.png" alt="Ringtone Maker screenshot 2" />
-              <img src="screens/ringtone3.png" alt="Ringtone Maker screenshot 3" />
-              <img src="screens/ringtone4.png" alt="Ringtone Maker screenshot 4" />
-              <img src="screens/ringtone5.png" alt="Ringtone Maker screenshot 5" />
-            </div>
-          </div>
-        </article>
-
-        <!-- App 3 -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Polar Members - Been Meter Map</h3>
-              <p>Visualize your activity and connections with an interactive map and tracker.</p>
-              <a href="https://apps.apple.com/us/app/polar-members-been-meter-map/id6751887110" class="app-link" target="_blank">View on App Store</a>
-            </div>
-            <div class="app-screens">
-              <img src="screens/polar1.png" alt="Polar Members screenshot 1" />
-              <img src="screens/polar2.png" alt="Polar Members screenshot 2" />
-              <img src="screens/polar3.png" alt="Polar Members screenshot 3" />
-              <img src="screens/polar4.png" alt="Polar Members screenshot 4" />
-              <img src="screens/polar5.png" alt="Polar Members screenshot 5" />
-            </div>
-          </div>
-        </article>
-
-        <!-- App 4 (In Development) -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Chicken Go</h3>
-              <p>New iOS game currently in development — coming soon to the App Store!</p>
-            </div>
-            <div class="app-screens">
-              <img src="screens/chicken1.png" alt="Chicken Go screenshot placeholder" />
-              <img src="screens/chicken2.png" alt="Chicken Go screenshot placeholder" />
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
+  <!-- ABOUT -->
+  <section id="about" class="about">
     <div class="container">
-      <p>© 2026 Mikhail Egorov</p>
+      <h2>About</h2>
+      <p>
+        I’m an independent iOS developer focused on building reliable,
+        thoughtfully designed apps with clean architecture and attention to
+        detail. I help turn ideas into App Store-ready products.
+      </p>
     </div>
-  </footer>
+  </section>
+
+  <!-- APPS -->
+  <section id="apps" class="apps">
+    <div class="container">
+      <h2>Apps</h2>
+
+      <div class="apps-grid">
+        <div class="app-card">
+          <h3>Mindbody Goal Tracker</h3>
+          <p>Goal tracking & motivation app</p>
+        </div>
+
+        <div class="app-card">
+          <h3>Ringtone Maker</h3>
+          <p>Convert video to MP3 ringtones</p>
+        </div>
+
+        <div class="app-card">
+          <h3>Polar Members</h3>
+          <p>Been meter & map experience</p>
+        </div>
+
+        <div class="app-card upcoming">
+          <h3>Chicken Go</h3>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
