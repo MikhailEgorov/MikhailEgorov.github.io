@@ -188,22 +188,31 @@
   </footer>
 
   <!-- ================== JS FOR SCROLL ================== -->
-  <script>
-    // Скролл к секции только при клике на кнопки
-    const buttons = document.querySelectorAll('.navbar button');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target');
-        const section = document.getElementById(targetId);
-        if(section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
+<script>
+  // Отключаем автоматическое восстановление позиции при reload/back
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-    // Страница всегда открывается сверху при загрузке
-    window.scrollTo(0, 0);
-  </script>
+  // Скролл к секции только при клике на кнопки
+  const buttons = document.querySelectorAll('.navbar button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const section = document.getElementById(targetId);
+      if(section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Гарантируем, что при первой загрузке страница открывается сверху
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1); // маленькая задержка, чтобы браузер не успел сам скроллить
+  });
+</script>
 
 </body>
 </html>
