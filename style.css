@@ -11,10 +11,8 @@ body {
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "kern" 1, "liga" 1;
-
-  /* ================== ADDED ================== */
-  scroll-behavior: smooth; /* плавный скролл */
-  padding-top: 60px; /* место для фиксированной шапки */
+  scroll-behavior: smooth;
+  padding-top: 60px;
 }
 
 .container {
@@ -25,14 +23,14 @@ body {
 
 /* ================== NAVBAR ================== */
 .navbar {
-  position: fixed; /* чтобы шапка всегда была сверху */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: #ffffff;
   border-bottom: 1px solid #e5e5e7;
   display: flex;
-  justify-content: center; /* кнопки по центру */
+  justify-content: center;
   gap: 32px;
   z-index: 1000;
   padding: 12px 0;
@@ -162,4 +160,23 @@ section h2 {
   padding: 48px 20px;
   color: #6e6e73;
   font-size: 14px;
+}
+
+/* ================== CONTACT ================== */
+.contact {
+  border-top: 1px solid #e5e5e7;
+  padding: 60px 24px;
+}
+
+.contact h2 {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.contact iframe {
+  width: 100%;
+  min-height: 500px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
 }
