@@ -16,22 +16,28 @@
       background: #ffffff;
       border-bottom: 1px solid #e5e5e7;
       display: flex;
-      justify-content: center;
+      justify-content: space-between; /* кнопки слева, языки справа */
       align-items: center;
-      gap: 32px;
+      gap: 16px;
       z-index: 1000;
-      padding: 12px 16px;
+      padding: 8px 16px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      flex-wrap: wrap; /* разрешаем перенос элементов */
+      white-space: nowrap; /* предотвращаем перенос на новые строки */
+    }
+
+    .navbar .nav-buttons {
+      display: flex;
+      gap: 12px; /* небольшой промежуток между кнопками */
     }
 
     .navbar button {
       background: none;
       border: none;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 500;
       cursor: pointer;
       transition: color 0.2s ease;
+      padding: 4px 8px;
     }
 
     .navbar button:hover {
@@ -40,19 +46,18 @@
 
     body {
       padding-top: 60px; /* место под navbar */
-      scroll-behavior: smooth; /* плавный скролл */
+      scroll-behavior: smooth;
     }
 
     /* Language buttons container */
     .lang-switch {
       display: flex;
-      gap: 8px;
-      margin-left: 0; /* убираем фиксированный отступ */
+      gap: 6px; /* чуть меньше */
     }
 
     .lang-switch button {
-      font-size: 15px;
-      padding: 4px 8px;
+      font-size: 13px;
+      padding: 3px 6px;
       border: 1px solid #ccc;
       border-radius: 6px;
       background: #f5f5f5;
@@ -71,31 +76,17 @@
       color: #fff;
       border-color: #0066cc;
     }
-
-    /* ================== MOBILE FIX ================== */
-    @media (max-width: 600px) {
-      .navbar {
-        justify-content: space-between; /* меню слева, языки справа */
-      }
-
-      .navbar button[data-target] {
-        font-size: 15px;
-        margin: 4px 0;
-      }
-
-      .lang-switch {
-        order: 2; /* языки можно перенести ниже при необходимости */
-      }
-    }
   </style>
 </head>
 <body>
   
   <!-- ================== NAVBAR ================== -->
   <nav class="navbar">
-    <button data-target="contact" data-i18n="nav_contact">Contact Me</button>
-    <button data-target="about" data-i18n="nav_about">About</button>
-    <button data-target="apps" data-i18n="nav_apps">Apps</button>
+    <div class="nav-buttons">
+      <button data-target="contact" data-i18n="nav_contact">Contact Me</button>
+      <button data-target="about" data-i18n="nav_about">About</button>
+      <button data-target="apps" data-i18n="nav_apps">Apps</button>
+    </div>
 
     <!-- Language switch -->
     <div class="lang-switch">
@@ -130,6 +121,7 @@
   </header>
 
   <main>
+
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container">
@@ -145,7 +137,7 @@
       <div class="container">
         <h2 data-i18n="apps_title">Apps</h2>
 
-        <!-- App 1 -->
+        <!-- App cards -->
         <article class="app-card">
           <div class="app-content">
             <div class="app-text">
@@ -163,7 +155,6 @@
           </div>
         </article>
 
-        <!-- App 2 -->
         <article class="app-card">
           <div class="app-content">
             <div class="app-text">
@@ -181,7 +172,6 @@
           </div>
         </article>
 
-        <!-- App 3 -->
         <article class="app-card">
           <div class="app-content">
             <div class="app-text">
@@ -199,7 +189,6 @@
           </div>
         </article>
 
-        <!-- App 4 (In Development) -->
         <article class="app-card">
           <div class="app-content">
             <div class="app-text">
@@ -327,7 +316,6 @@
 
   const savedLang = localStorage.getItem('siteLang') || 'en';
   setLanguage(savedLang);
-
 </script>
 
 </body>
