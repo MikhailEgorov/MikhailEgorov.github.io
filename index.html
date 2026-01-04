@@ -47,12 +47,12 @@
       background: #ffffff;
       border-bottom: 1px solid #e5e5e7;
       display: flex;
-      justify-content: center; /* кнопки по центру */
+      justify-content: center;
       gap: 16px;
       z-index: 1000;
       padding: 8px 16px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      white-space: nowrap; /* предотвращаем перенос на новые строки */
+      white-space: nowrap;
     }
 
     .navbar button {
@@ -76,12 +76,6 @@
   </style>
 </head>
 <body>
-  
-  <!-- ================== LANGUAGE SWITCH TOP ================== -->
-  <div class="lang-switch-top">
-    <button class="lang-btn" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="ru">RU</button>
-  </div>
 
   <!-- ================== NAVBAR ================== -->
   <nav class="navbar">
@@ -89,6 +83,12 @@
     <button data-target="about" data-i18n="nav_about">About</button>
     <button data-target="apps" data-i18n="nav_apps">Apps</button>
   </nav>
+
+  <!-- ================== LANGUAGE SWITCH TOP ================== -->
+  <div class="lang-switch-top">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+  </div>
 
   <!-- HERO -->
   <header class="hero">
@@ -226,70 +226,41 @@
   <!-- ================== JS FOR SCROLL + LANG ================== -->
 <script>
   // SCROLL
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-  const buttons = document.querySelectorAll('.navbar button[data-target]');
-  buttons.forEach(btn => {
+  document.querySelectorAll('.navbar button[data-target]').forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-target');
       const section = document.getElementById(targetId);
-      if(section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if(section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
-  window.addEventListener('load', () => {
-    setTimeout(() => { window.scrollTo(0, 0); }, 1);
-  });
+  window.addEventListener('load', () => setTimeout(() => window.scrollTo(0,0), 1));
 
   // LANGUAGE SWITCH
   const i18n = {
     en: {
-      nav_contact: "Contact Me",
-      nav_about: "About",
-      nav_apps: "Apps",
+      nav_contact: "Contact Me", nav_about: "About", nav_apps: "Apps",
       hero_subtitle: "Hi, I'm Mikhail Egorov — an iOS developer and consultant, delivering polished, production-ready mobile applications.",
-      about_title: "About",
-      about_text: "I build business-first iOS solutions. I handle the full application lifecycle — from concept and architecture design to development, App Store release, and post-launch support. I also enhance existing projects, improving performance, UX, and maintainability.",
+      about_title: "About", about_text: "I build business-first iOS solutions. I handle the full application lifecycle — from concept and architecture design to development, App Store release, and post-launch support. I also enhance existing projects, improving performance, UX, and maintainability.",
       apps_title: "Apps",
-      app1_title: "Mindbody Goal Tracker",
-      app1_text: "Track your goals and progress with an intuitive interface and actionable insights.",
-      app1_link: "View on App Store",
-      app2_title: "Ringtone Maker - Video to MP3",
-      app2_text: "Create ringtones from videos and audio files quickly and easily.",
-      app2_link: "View on App Store",
-      app3_title: "Polar Members - Been Meter Map",
-      app3_text: "Visualize your activity and connections with an interactive map and tracker.",
-      app3_link: "View on App Store",
-      app4_title: "Chicken Go",
-      app4_text: "New iOS game currently in development — coming soon to the App Store!",
-      contact_title: "Contact Me",
-      footer_text: "© 2026 Mikhail Egorov"
+      app1_title: "Mindbody Goal Tracker", app1_text: "Track your goals and progress with an intuitive interface and actionable insights.", app1_link: "View on App Store",
+      app2_title: "Ringtone Maker - Video to MP3", app2_text: "Create ringtones from videos and audio files quickly and easily.", app2_link: "View on App Store",
+      app3_title: "Polar Members - Been Meter Map", app3_text: "Visualize your activity and connections with an interactive map and tracker.", app3_link: "View on App Store",
+      app4_title: "Chicken Go", app4_text: "New iOS game currently in development — coming soon to the App Store!",
+      contact_title: "Contact Me", footer_text: "© 2026 Mikhail Egorov"
     },
     ru: {
-      nav_contact: "Связаться",
-      nav_about: "Обо мне",
-      nav_apps: "Приложения",
+      nav_contact: "Связаться", nav_about: "Обо мне", nav_apps: "Приложения",
       hero_subtitle: "Привет! Я Михаил Егоров — iOS-разработчик и консультант, создаю качественные мобильные приложения.",
-      about_title: "Обо мне",
-      about_text: "Я создаю iOS-решения, ориентированные на бизнес. Работаю с полным циклом: от концепции и проектирования до разработки, публикации в App Store и поддержки. Также улучшаю существующие проекты, повышаю производительность, UX и сопровождаемость.",
+      about_title: "Обо мне", about_text: "Я создаю iOS-решения, ориентированные на бизнес. Работаю с полным циклом: от концепции и проектирования до разработки, публикации в App Store и поддержки. Также улучшаю существующие проекты, повышаю производительность, UX и сопровождаемость.",
       apps_title: "Приложения",
-      app1_title: "Mindbody Goal Tracker",
-      app1_text: "Следите за своими целями и прогрессом с помощью удобного интерфейса и полезной аналитики.",
-      app1_link: "Посмотреть в App Store",
-      app2_title: "Ringtone Maker - Video to MP3",
-      app2_text: "Создавайте рингтоны из видео и аудио быстро и легко.",
-      app2_link: "Посмотреть в App Store",
-      app3_title: "Polar Members - Been Meter Map",
-      app3_text: "Визуализируйте вашу активность и связи с помощью интерактивной карты и трекера.",
-      app3_link: "Посмотреть в App Store",
-      app4_title: "Chicken Go",
-      app4_text: "Новая iOS-игра в разработке — скоро в App Store!",
-      contact_title: "Связаться",
-      footer_text: "© 2026 Михаил Егоров"
+      app1_title: "Mindbody Goal Tracker", app1_text: "Следите за своими целями и прогрессом с помощью удобного интерфейса и полезной аналитики.", app1_link: "Посмотреть в App Store",
+      app2_title: "Ringtone Maker - Video to MP3", app2_text: "Создавайте рингтоны из видео и аудио быстро и легко.", app2_link: "Посмотреть в App Store",
+      app3_title: "Polar Members - Been Meter Map", app3_text: "Визуализируйте вашу активность и связи с помощью интерактивной карты и трекера.", app3_link: "Посмотреть в App Store",
+      app4_title: "Chicken Go", app4_text: "Новая iOS-игра в разработке — скоро в App Store!",
+      contact_title: "Связаться", footer_text: "© 2026 Михаил Егоров"
     }
   };
 
@@ -298,11 +269,9 @@
       const key = el.getAttribute('data-i18n');
       if(i18n[lang][key]) el.textContent = i18n[lang][key];
     });
-
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
-
     localStorage.setItem('siteLang', lang);
   }
 
@@ -310,8 +279,7 @@
     btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
   });
 
-  const savedLang = localStorage.getItem('siteLang') || 'en';
-  setLanguage(savedLang);
+  setLanguage(localStorage.getItem('siteLang') || 'en');
 </script>
 
 </body>
