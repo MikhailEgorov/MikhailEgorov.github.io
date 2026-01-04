@@ -1,212 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mikhail Egorov – iOS Developer</title>
+* {
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ================== ADDED: NAVBAR ================== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e5e7;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      z-index: 1000;
-      padding: 12px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
+body {
+  margin: 0;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
+               "SF Pro Display", "SF Pro Text",
+               Helvetica, Arial, sans-serif;
+  color: #1d1d1f;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern" 1, "liga" 1;
+  scroll-behavior: smooth;
+  padding-top: 60px; /* место для фиксированной шапки */
+}
 
-    .navbar button {
-      background: none;
-      border: none;
-      font-size: 17px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 120px 24px;
+}
 
-    .navbar button:hover {
-      color: #0066cc;
-    }
+/* ================== NAVBAR ================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e7;
+  display: flex;
+  justify-content: center; /* кнопки по центру */
+  gap: 32px;
+  z-index: 1000;
+  padding: 12px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
 
-    body {
-      padding-top: 60px; /* место под navbar */
-      scroll-behavior: smooth; /* плавный скролл */
-    }
-  </style>
-</head>
-<body>
-  
-  <!-- ================== NAVBAR ================== -->
-  <nav class="navbar">
-    <button data-target="contact">Contact Me</button> <!-- первая кнопка -->
-    <button data-target="about">About</button>
-    <button data-target="apps">Apps</button>
-  </nav>
+.navbar button {
+  background: none;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container">
-      <p class="subtitle">
-        Hi, I'm Mikhail Egorov — an iOS developer and consultant, delivering polished, production-ready mobile applications.
-      </p>
+.navbar button:hover {
+  color: #0066cc;
+}
 
-      <!-- Social Links -->
-      <div class="social-links">
-        <a href="#" class="social-link" title="Email" aria-label="Email">
-          <img src="icons/gmail.svg" alt="Email">
-        </a>
-        <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
-          <img src="icons/linkedin.svg" alt="LinkedIn">
-        </a>
-        <a href="#" class="social-link" title="Telegram" aria-label="Telegram">
-          <img src="icons/telegram.svg" alt="Telegram">
-        </a>
-        <a href="#" class="social-link" title="Facebook" aria-label="Facebook">
-          <img src="icons/facebook.svg" alt="Facebook">
-        </a>
-        <a href="#" class="social-link" title="Instagram" aria-label="Instagram">
-          <img src="icons/instagram.svg" alt="Instagram">
-        </a>
-      </div>
+/* HERO */
+.hero {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-    </div>
-  </header>
+.subtitle {
+  font-size: 28px;
+  color: #6e6e73;
+  font-weight: 400;
+  max-width: 720px;
+  margin: 0 auto;
+  letter-spacing: -0.01em;
+}
 
+.social-links {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
 
-  <main>
+.social-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="container">
-        <h2>About</h2>
-        <p>
-          I build business-first iOS solutions. I handle the full application lifecycle — from concept and architecture design to development, App Store release, and post-launch support. I also enhance existing projects, improving performance, UX, and maintainability.
-        </p>
-      </div>
-    </section>
+.social-link:hover img {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
 
-    <!-- APPS -->
-    <section class="apps" id="apps">
-      <div class="container">
-        <h2>Apps</h2>
+/* SECTIONS */
+section {
+  border-top: 1px solid #e5e5e7;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-        <!-- App 1 -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Mindbody Goal Tracker</h3>
-              <p>Track your goals and progress with an intuitive interface and actionable insights.</p>
-              <a href="https://apps.apple.com/us/app/mindbody-goal-tracker/id6756172150" class="app-link" target="_blank">View on App Store</a>
-            </div>
-            <div class="app-screens">
-              <img src="screens/mindbody1.png" alt="Mindbody Goal Tracker screenshot 1" />
-              <img src="screens/mindbody2.png" alt="Mindbody Goal Tracker screenshot 2" />
-              <img src="screens/mindbody3.png" alt="Mindbody Goal Tracker screenshot 3" />
-              <img src="screens/mindbody4.png" alt="Mindbody Goal Tracker screenshot 4" />
-              <img src="screens/mindbody5.png" alt="Mindbody Goal Tracker screenshot 5" />
-            </div>
-          </div>
-        </article>
+section h2 {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
 
-        <!-- App 2 -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Ringtone Maker - Video to MP3</h3>
-              <p>Create ringtones from videos and audio files quickly and easily.</p>
-              <a href="https://apps.apple.com/us/app/ringtone-maker-video-to-mp3/id6743165046" class="app-link" target="_blank">View on App Store</a>
-            </div>
-            <div class="app-screens">
-              <img src="screens/ringtone1.png" alt="Ringtone Maker screenshot 1" />
-              <img src="screens/ringtone2.png" alt="Ringtone Maker screenshot 2" />
-              <img src="screens/ringtone3.png" alt="Ringtone Maker screenshot 3" />
-              <img src="screens/ringtone4.png" alt="Ringtone Maker screenshot 4" />
-              <img src="screens/ringtone5.png" alt="Ringtone Maker screenshot 5" />
-            </div>
-          </div>
-        </article>
+/* ABOUT */
+.about p {
+  max-width: 640px;
+  font-size: 19px;
+  line-height: 1.6;
+}
 
-        <!-- App 3 -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Polar Members - Been Meter Map</h3>
-              <p>Visualize your activity and connections with an interactive map and tracker.</p>
-              <a href="https://apps.apple.com/us/app/polar-members-been-meter-map/id6751887110" class="app-link" target="_blank">View on App Store</a>
-            </div>
-            <div class="app-screens">
-              <img src="screens/polar1.png" alt="Polar Members screenshot 1" />
-              <img src="screens/polar2.png" alt="Polar Members screenshot 2" />
-              <img src="screens/polar3.png" alt="Polar Members screenshot 3" />
-              <img src="screens/polar4.png" alt="Polar Members screenshot 4" />
-              <img src="screens/polar5.png" alt="Polar Members screenshot 5" />
-            </div>
-          </div>
-        </article>
+/* APPS */
+.app-card {
+  margin-bottom: 80px;
+}
 
-        <!-- App 4 (In Development) -->
-        <article class="app-card">
-          <div class="app-content">
-            <div class="app-text">
-              <h3>Chicken Go</h3>
-              <p>New iOS game currently in development — coming soon to the App Store!</p>
-            </div>
-            <div class="app-screens">
-              <img src="screens/chicken1.png" alt="Chicken Go screenshot placeholder" />
-              <img src="screens/chicken2.png" alt="Chicken Go screenshot placeholder" />
-            </div>
-          </div>
-        </article>
+.app-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
 
-      </div>
-    </section>
+.app-text {
+  max-width: 500px;
+}
 
-    <!-- ================== CONTACT ME ================== -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQ8aCGGib_w2da4yF_EgovaSl1zxgH5abaSmGyFYjSdqMsDg/viewform?embedded=true" 
-                width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
-          Loading…
-        </iframe>
-      </div>
-    </section>
+.app-text h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
 
-  </main>
+.app-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Mikhail Egorov</p>
-    </div>
-  </footer>
+.app-screens {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
-  <!-- ================== ADDED: JS FOR SCROLL ================== -->
-  <script>
-    const buttons = document.querySelectorAll('.navbar button');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target');
-        const section = document.getElementById(targetId);
-        if(section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
+.app-screens img {
+  width: 140px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
 
-    // При загрузке страницы всегда быть сверху
-    window.addEventListener('load', () => {
-      window.scrollTo(0, 0);
-    });
-  </script>
+/* LINKS */
+.app-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 17px;
+  color: #0066cc;
+  text-decoration: none;
+}
 
-</body>
-</html>
+/* FOOTER */
+.footer {
+  border-top: 1px solid #e5e5e7;
+  text-align: center;
+  padding: 48px 20px;
+  color: #6e6e73;
+  font-size: 14px;
+}
+
+/* ================== CONTACT ================== */
+.contact {
+  border-top: 1px solid #e5e5e7;
+  padding: 60px 24px;
+}
+
+.contact h2 {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+/* Google Form iframe */
+.contact iframe {
+  width: 100%;
+  min-height: 500px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+/* ================== MOBILE ADJUSTMENTS ================== */
+@media (max-width: 600px) {
+  .app-content {
+    flex-direction: column;
+  }
+
+  .app-screens img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 0;
+  }
+}
