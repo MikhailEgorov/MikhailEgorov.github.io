@@ -9,12 +9,12 @@
   <style>
     /* ================== LANGUAGE SWITCH TOP ================== */
     .lang-switch-top {
-      position: fixed;
-      top: 8px;
-      right: 16px;
+      position: absolute; /* теперь абсолютное относительно hero */
+      top: 16px;
+      right: 24px;
       display: flex;
       gap: 6px;
-      z-index: 1001; /* выше navbar */
+      z-index: 10;
     }
 
     .lang-switch-top button {
@@ -84,16 +84,16 @@
     <button data-target="apps" data-i18n="nav_apps">Apps</button>
   </nav>
 
-  <!-- ================== LANGUAGE SWITCH TOP ================== -->
-  <!-- ВЫНЕСЕН ВНУТЬ ШАПКИ, НАД HERO -->
-  <div class="lang-switch-top">
-    <button class="lang-btn" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="ru">RU</button>
-  </div>
-
   <!-- HERO -->
   <header class="hero">
-    <div class="container">
+    <div class="container" style="position: relative;"> <!-- важное: relative -->
+      
+      <!-- ================== LANGUAGE SWITCH TOP ================== -->
+      <div class="lang-switch-top">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+      </div>
+
       <p class="subtitle" data-i18n="hero_subtitle">
         Hi, I'm Mikhail Egorov — an iOS developer and consultant, delivering polished, production-ready mobile applications.
       </p>
@@ -226,7 +226,6 @@
 
   <!-- ================== JS FOR SCROLL + LANG ================== -->
 <script>
-  // SCROLL
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
   document.querySelectorAll('.navbar button[data-target]').forEach(btn => {
@@ -239,7 +238,6 @@
 
   window.addEventListener('load', () => setTimeout(() => window.scrollTo(0,0), 1));
 
-  // LANGUAGE SWITCH
   const i18n = {
     en: {
       nav_contact: "Contact Me", nav_about: "About", nav_apps: "Apps",
